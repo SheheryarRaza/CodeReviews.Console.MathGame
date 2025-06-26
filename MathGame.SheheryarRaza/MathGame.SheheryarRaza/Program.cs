@@ -65,9 +65,6 @@ public class Game
                 PlayDivisionGame();
                 return false;
             case "5":
-                DisplayGameHistory();
-                return false;
-            case "6":
                 Random random = new Random();
                 random.Next(1, 5);
                 switch (random.Next(1, 5))
@@ -85,6 +82,9 @@ public class Game
                         PlayDivisionGame();
                         break;
                 }
+                return false;
+            case "6":
+                DisplayGameHistory();
                 return false;
             case "7":
                 Console.WriteLine("Thanks for playing!");
@@ -341,6 +341,7 @@ public class Game
 
     public static void DisplayGameHistory()
     {
+        Console.Clear();
         Console.WriteLine("\n--- Game History ---");
 
         if (!gameHistory.Any())
@@ -364,6 +365,8 @@ public class Game
 
         Console.WriteLine("\nPress any key to return to the main menu.");
         Console.ReadKey();
+        Console.Clear();
+
     }
 }
 
